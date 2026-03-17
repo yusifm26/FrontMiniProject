@@ -109,16 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initProductSlider('product-track-3', 'box15', 'box16');
 });
 
-document.addEventListener('click', (e) => {
-    const card = e.target.closest('.product-card');
-    if (!card) return;
-
-    if (e.target.closest('.fav-box')) return;
-    if (e.target.closest('.add-to-cart-btn')) return;
-
-    window.location.href = 'product.html';
-});
-
 (function () {
     const viewport = document.getElementById('brandViewport');
     const track = document.getElementById('brandTrack');
