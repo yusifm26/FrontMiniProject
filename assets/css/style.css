@@ -329,3 +329,493 @@ body { font-family: 'Segoe UI', sans-serif; background: #f5f5f5; }
   border-radius: 2px;
   display: block;
 }
+
+/* Slider */
+.product-slider {
+    width: 100%;
+    overflow: hidden; /* Kənara çıxan 5 məhsulu gizlədir */
+    padding: 10px 0;
+}
+
+.product-track {
+    display: flex !important;
+    gap: 16px;
+    transition: transform 0.5s ease-in-out !important; /* Bu mütləq olmalıdır */
+    will-change: transform;
+}
+
+.product-card {
+    /* 5 məhsul görünsün deyə: (100% - boşluqlar) / 5 */
+    width: calc((100% - 64px) / 5) !important; 
+    flex-shrink: 0; /* Ölçünü sabit saxlayır */
+}
+
+/* ── PRODUCT CARD ── */
+.product-card {
+    width: 100%;             /* Grid sütununa tam sığsın */
+    min-width: 0;            /* Hesablanmış min-width-i sıfırlayırıq */
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px;
+    border: 1px solid #eee;
+    position: relative;
+    transition: box-shadow 0.2s, transform 0.2s;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.product-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+/* Arrow buttons */
+.arrow-wrap { 
+  display: flex; 
+  gap: 8px; 
+}
+
+.arrow-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid #c5d5ea;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.arrow-box:last-child {
+  background: #0057b8;
+  border-color: #0057b8;
+}
+
+.arrow-box:last-child svg { 
+  stroke: #fff !important; 
+}
+
+.arrow-box:hover {
+  background: #0057b8;
+  border-color: #0057b8;
+}
+
+.arrow-box:hover svg { 
+  stroke: #fff !important; 
+}
+
+/* Discount badge */
+.discount {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #0057b8;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  z-index: 2;
+}
+
+/* Fav button */
+.fav-box {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #eee;
+  background: #fff;
+  z-index: 2;
+  transition: all 0.2s;
+}
+
+.fav-box:hover {
+  border-color: #e60023;
+  background: #fff0f0;
+}
+
+/* Product image */
+.product-image {
+  width: 100%;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 14px;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Product name */
+.product-card h3 {
+  font-size: 13px;
+  font-weight: 500;
+  color: #222;
+  line-height: 1.4;
+  min-height: 38px;
+  margin-bottom: 6px;
+}
+
+/* Stars */
+.stars-box {
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+/* Prices */
+.old-price {
+  font-size: 13px;
+  color: #aaa;
+  text-decoration: line-through;
+  margin-bottom: 2px;
+}
+
+.new-price {
+  font-size: 20px;
+  font-weight: 800;
+  color: #e60023;
+  margin-bottom: 6px;
+}
+
+/* Installment */
+.installment {
+  font-size: 12px;
+  color: #0057b8;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+/* Section bottom line */
+.product-section::after {
+  content: '';
+  display: block;
+  margin-top: 24px;
+  height: 4px;
+  background: linear-gradient(to right, #f5a623 40%, #eee 40%);
+  border-radius: 2px;
+}
+
+/* Məhsul kartının əsası */
+.product-card {
+    position: relative;
+  padding-bottom: 16px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, padding-bottom 0.3s ease;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.product-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding-bottom: 74px;
+}
+
+.product-details-wrap {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.product-card:hover .product-details-wrap {
+  transform: translateY(-18px);
+}
+
+/* Düymə bloku */
+.cart-hover-box {
+    position: absolute;
+  bottom: -58px;
+    left: 0;
+    width: 100%;
+    padding: 0 15px;
+  opacity: 0;
+    visibility: hidden;
+  transition: bottom 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* Mouse üzərinə gələndə */
+.product-card:hover .cart-hover-box {
+    opacity: 1;
+    visibility: visible;
+  bottom: 12px;
+  pointer-events: auto;
+}
+
+/* Düymənin öz stili (Orijinaldakı kimi qırmızı) */
+.add-to-cart-btn {
+    width: 100%;
+    background-color: #EE3323;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #d12d1f;
+}
+
+/* Generic divider for sections that need same visual break */
+.section-divider::after {
+  content: '';
+  display: block;
+  margin-top: 30px;
+  height: 4px;
+  background: linear-gradient(to right, #f5a623 40%, #eee 40%);
+  border-radius: 2px;
+  margin-bottom: 40px;
+}
+
+.reviews-section {
+    margin-bottom: 0;
+}
+
+.reviews-section h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.video-card {
+  position: relative;
+  border-radius: 12px;
+    overflow: hidden;
+    background-color: #F2F4F7;
+  aspect-ratio: 16 / 9;
+  border: 1px solid #eee;
+  transition: box-shadow 0.2s ease;
+}
+
+.video-card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.video-card iframe {
+    width: 100%;
+  height: 100%;
+    display: block;
+    border: none;
+}
+
+/* ===== BRAND ===== */
+
+.brand-strip {
+  margin-top: 20px;
+  margin-bottom: 0;
+    overflow: hidden;
+}
+
+.brand-viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+.brand-track {
+    display: flex;
+  gap: 12px;
+    width: max-content;
+}
+
+.brand-box {
+    min-width: 120px;
+    height: 58px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    border: 1px solid #E4E8F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    flex-shrink: 0;
+    cursor: grab;
+}
+
+.brand-box:active {
+    cursor: grabbing;
+}
+
+.brand-box img {
+    max-width: 100%;
+    max-height: 38px;
+    object-fit: contain;
+    display: block;
+}
+
+/* ===== FOOTER ===== */
+
+.site-footer {
+    background-color: #000000;
+    color: #ffffff;
+  padding: 20px 0 14px;
+}
+
+.site-footer .container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 52px);
+  padding: 0 20px;
+  position: relative;
+  left: 26px;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  gap: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 16px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+  gap: 8px;
+}
+
+.footer-col h4 {
+  font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.footer-col a,
+.footer-col p {
+  font-size: 13px;
+    color: #D5DAE3;
+}
+
+.footer-logo {
+  width: 170px;
+  height: 50px;
+    border-radius: 10px;
+  margin-bottom: 6px;
+}
+
+.social-bar {
+  padding-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.social-icons,
+.awards {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-box {
+  width: 32px;
+  height: 32px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.social-box img {
+  transition: filter 0.25s ease, transform 0.25s ease;
+}
+
+.social-box:hover {
+  transform: translateY(-2px);
+}
+
+.social-box:hover img {
+  filter: brightness(0) invert(1);
+  transform: scale(1.06);
+}
+
+.social-box.fb:hover {
+  background-color: #1877F2;
+}
+
+.social-box.wp:hover {
+  background-color: #25D366;
+}
+
+.social-box.ig:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.social-box.yt:hover {
+  background-color: #FF0000;
+}
+
+.award-box {
+  width: 78px;
+  height: 32px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+@media (max-width: 1200px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section,
+  .product-section,
+  .reviews-section,
+  .brand-strip,
+  .site-footer .container {
+    width: 100%;
+    left: 0;
+    padding: 0 14px;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-section h2 {
+    font-size: 26px;
+  }
+
+  .section-divider::after {
+    margin-top: 20px;
+    margin-bottom: 24px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    padding-bottom: 14px;
+  }
+
+  .social-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
