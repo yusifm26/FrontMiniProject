@@ -34,7 +34,6 @@ body { font-family: 'Segoe UI', sans-serif; background: #f5f5f5; }
   width: auto;
   display: block;
 }
-
 .top-nav {
   display: flex;
   align-items: center;
@@ -88,7 +87,7 @@ body { font-family: 'Segoe UI', sans-serif; background: #f5f5f5; }
     width: calc(100% - 52px); 
     padding: 0 20px;          
     position: relative;
-    left: 26px;             
+    left: 26px;              
 }
 
   .hero-section {
@@ -323,6 +322,54 @@ body { font-family: 'Segoe UI', sans-serif; background: #f5f5f5; }
   display: block;
 }
 
+.product-section {
+    max-width: 1400px;        
+    margin: 0 auto;           
+    padding: 30px 20px 10px;  
+    width: calc(100% - 52px); 
+    position: relative;
+    left: 26px;               
+}
+.section-head {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-head h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #111;
+}
+
+.arrow-wrap { display: flex; gap: 8px; }
+
+.arrow-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid #c5d5ea;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.arrow-box:last-child {
+  background: #0057b8;
+  border-color: #0057b8;
+}
+
+.arrow-box:last-child svg { stroke: #fff !important; }
+
+.arrow-box:hover {
+  background: #0057b8;
+  border-color: #0057b8;
+}
+
+.arrow-box:hover svg { stroke: #fff !important; }
+
 .product-slider {
     width: 100%;
     overflow: hidden; 
@@ -338,7 +385,7 @@ body { font-family: 'Segoe UI', sans-serif; background: #f5f5f5; }
 
 .product-card {
     width: calc((100% - 64px) / 5) !important; 
-    flex-shrink: 0; /
+    flex-shrink: 0; 
 }
 
 .product-card {
@@ -472,7 +519,6 @@ body { font-family: 'Segoe UI', sans-serif; background: #f5f5f5; }
   font-weight: 500;
   margin-bottom: 12px;
 }
-
 .product-section::after {
   content: '';
   display: block;
@@ -482,7 +528,6 @@ body { font-family: 'Segoe UI', sans-serif; background: #f5f5f5; }
   border-radius: 2px;
 }
 
-/* Məhsul kartının əsası */
 .product-card {
     position: relative;
   padding-bottom: 16px;
@@ -506,7 +551,6 @@ body { font-family: 'Segoe UI', sans-serif; background: #f5f5f5; }
   transform: translateY(-18px);
 }
 
-/* Düymə bloku */
 .cart-hover-box {
     position: absolute;
   bottom: -58px;
@@ -590,7 +634,6 @@ body { font-family: 'Segoe UI', sans-serif; background: #f5f5f5; }
     border: none;
 }
 
-/* ===== BRAND ===== */
 
 .brand-strip {
   margin-top: 20px;
@@ -634,7 +677,6 @@ body { font-family: 'Segoe UI', sans-serif; background: #f5f5f5; }
     display: block;
 }
 
-/* ===== FOOTER ===== */
 
 .site-footer {
     background-color: #000000;

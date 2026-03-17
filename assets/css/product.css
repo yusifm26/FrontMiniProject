@@ -1,3 +1,5 @@
+
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: Arial, sans-serif; font-size: 14px; color: #333; background: #f5f5f5; }
 
@@ -218,7 +220,6 @@ body { font-family: Arial, sans-serif; font-size: 14px; color: #333; background:
   font-weight: bold;
   cursor: pointer;
 }
-
 .one-click-btn:hover { background: #0d47a1; }
 .taksit-box {
   background: #fff;

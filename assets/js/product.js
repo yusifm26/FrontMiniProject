@@ -1,3 +1,4 @@
+
 function showTab(name) {
 	const tabsHeader = document.querySelector('.tabs-header');
 	if (!tabsHeader) return;
@@ -19,3 +20,4 @@ function showTab(name) {
 
 	if (clickedBtn) clickedBtn.classList.add('active');
 }
+
